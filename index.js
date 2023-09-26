@@ -1,24 +1,24 @@
 const express = require('express');
 const app = express();
 
-app.get('/api/customer', (req,res)=>{
+app.get('/api/customers', (req,res)=>{
     res.json({
         message: 'get data berhasil',
         data: [
             {
                 name: 'Ryan',
-                username: 'yann',
-                role: 'Lead'
+                username: 'Yann De Coupe',
+                role: 'Controller'
             },
             {
-                name: 'Verina',
-                username: 'rena',
-                role: 'Frontend'
+                name: 'Malek',
+                username: 'Doom',
+                role: 'Sentinel'
             },
             {
-                name: 'Angga',
-                username: 'gaa',
-                role: 'Backend'
+                name: 'Hafiz',
+                username: 'ThreeSaKeN',
+                role: 'Duelist'
             }
         ]
     })
