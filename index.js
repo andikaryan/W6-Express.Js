@@ -1,5 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+
+app.use(bodyParser.json());
 
 app.get('/api/customers', (req,res)=>{
     res.json({
@@ -21,6 +24,20 @@ app.get('/api/customers', (req,res)=>{
                 role: 'Duelist'
             }
         ]
+    })
+})
+
+app.post('/api/customers', (req, res) => {
+    const { name, username, role } = req.body;
+
+    // res.send(`thank you, ${name} with username: ${username} and role ${role} weh have rechieved your sbumission`);
+    res.json({
+        message: "create data berhasil!",
+        data: {
+            name: name,
+            username: username,
+            role: role
+        }
     })
 })
 
