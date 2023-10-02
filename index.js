@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 
 // Middleware
 function LoggerMiddleware(req, res, next){
@@ -49,7 +51,6 @@ app.get('/api/customers', (req,res)=>{
 app.post('/api/customers', LoggerMiddleware,(req, res) => {
     const { name, username, role } = req.body;
 
-    // res.send(`thank you, ${name} with username: ${username} and role ${role} weh have rechieved your sbumission`);
     res.status(201).json({
         message: "create data berhasil!",
         data: {
